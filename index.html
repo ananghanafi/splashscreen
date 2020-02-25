@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
+      rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Anang Hanafi</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  </head>
+  <body class="container">
+    <div class="gbounce"><img src="Invisiblebackface.png" alt="giphy"
+        style="margin-left: 43%;;width: 70px;height: 100px;position: absolute; margin-top:40px"></div>
+    <div style="text-align:center"><img src="Invisiblebackcover.png" alt="giphy"
+        style="width: 200px;height: 230px;position: relative;"></div>
+    <div class="motivasi">Keep Smile and Focus your Target!!!</div>
+    <!-- <div ><img src="Invisibleback.png" alt="giphy" style="width: 200px;height: 230px;"></div> -->
+    <!-- <h1><font color="white">Anang Hanafi</font></h1> -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+      'unsafe-inline';" />
+    <!-- We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>. -->
+  </body>
+</html>
+<style>
+.motivasi{
+  color: #851d41; ;margin-top: 30px;font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+}
+    @keyframes gbounce { 
+      0% { transform: translateY(0); }
+      30% { transform: translateY(-100px); }
+      50% { transform: translateY(0); }
+      100% { transform: translateY(0); }
+    }
+
+    .gbounce {
+      animation: gbounce 2s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+    }
+    .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    /* -webkit-app-region: drag; */
+}
+</style>
+<script src="node_modules/face-api.js/dist/face-api.js"></script>
+<script>
+  fullFaceDescriptions = faceapi.resizeResults(fullFaceDescriptions);
+  faceapi.draw.drawDetections(canvas, fullFaceDescriptions);
+</script>
